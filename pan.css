@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #d39266, #f7ad79);
+    color: #333;
+}
+
+.header-pan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background: linear-gradient(90deg, #ffddb0, #ffd1a6);
+    border-bottom: 4px solid #e67b3f;
+    box-shadow: 0 4px 10px rgba(230, 123, 63, 0.2);
+}
+
+.titulo-pan {
+    font-family: 'Pacifico', cursive;
+    color: #d35400;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px #cb7070;
+}
+
+
+.volver {
+    text-decoration: none;
+    background-color: #ffb383;
+    color: rgb(149, 82, 74);
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.volver:hover {
+    background-color: #953904;
+    transform: translateY(-2px);
+}
+
+
+.galeria-pan {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    padding: 50px 60px;
+    justify-items: center;
+}
+
+.item-pan {
+    background: #f6a458e9;
+    border-radius: 25px;
+    padding: 20px;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 6px 15px rgb(30, 88, 233);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-pan:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(230, 123, 63, 0.25);
+}
+
+.item-pan a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.item-pan p {
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 1em;
+    color: #6b3e26;
+}
+
+/* Imagen redonda */
+.cycle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f5b971;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(245, 185, 113, 0.4);
+}
+
+.cycle:hover {
+    transform: scale(1.15);
+    border-color: #e67b3f;
+}
+
+/* Efectos responsivos */
+@media (max-width: 768px) {
+    .galeria-pan {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .item-pan {
+        max-width: 85%;
+    }
+}

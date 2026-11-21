@@ -1,0 +1,109 @@
+body {
+    background: linear-gradient(to bottom right, #fff3e4, #ffd7b5);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px 20px 40px;
+}
+
+/* ----- Encabezado ----- */
+.titulo {
+    font-family: 'Pacifico', cursive;
+    color: #d35400;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px #ffe6d0;
+}
+
+.subtitulo {
+    color: #5a3e2b;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* ----- Formulario ----- */
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #f5b971;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #e67b3f;
+    box-shadow: 0 0 8px rgba(230, 123, 63, 0.4);
+    outline: none;
+}
+
+/* ----- Botón Donar ----- */
+.boton-donar {
+    background-color: #e67b3f;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.boton-donar:hover {
+    background-color: #cf6123;
+    transform: scale(1.05);
+}
+
+/* ----- Botón Volver ----- */
+.boton-volver {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 25px;
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.boton-volver:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 600px) {
+    .titulo {
+        font-size: 2rem;
+    }
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+}

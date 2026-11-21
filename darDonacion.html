@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dar Donación</title>
+    <link rel="stylesheet" href="darDonacion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="titulo">💝 Realizar Donación</h1>
+            <p class="subtitulo">Gracias por tu generosidad 🐶🐱</p>
+        </header>
+        <main class="formulario">
+            <!-- ✅ Ya agregado: action y method -->
+            <form action="guardar_donacion.php" method="POST">
+                <label for="tarjeta">Número de tarjeta:</label>
+                <input type="text" id="tarjeta" name="tarjeta" maxlength="16" placeholder="Ej. 1234 5678 9012 3456" required>
+                
+                <label for="clave">Clave (CVV):</label>
+                <input type="password" id="clave" name="clave" maxlength="3" placeholder="Ej. 123" required>
+                
+                <label for="cantidad">Cantidad a donar (MXN):</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" placeholder="Ej. 100" required>
+                
+                <button type="submit" class="boton-donar">💖 Donar ahora</button>
+            </form>
+            <a href="donaciones.html" class="boton-volver">← Regresar</a>
+        </main>
+    </div>
+</body>
+</html>

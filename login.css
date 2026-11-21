@@ -1,0 +1,150 @@
+body {
+    background: linear-gradient(135deg, #fcddb6, #fdcd99);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+    position: relative;
+    width: 550px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+/* Título */
+.titulo {
+    font-family: "Brush Script MT", cursive;
+    font-size: 32px;
+    color: #3e2f1c;
+    margin-bottom: 15px;
+}
+
+.titulo span {
+    color: #b35c1e;
+}
+
+/* Círculo del formulario */
+.form-circulo {
+    border: 5px solid #e67e22;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    background-color: #fffaf3;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-circulo h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #a84300;
+}
+
+.form-circulo span {
+    color: #e67e22;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+label {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #4a2c0a;
+    font-weight: 600;
+}
+
+input {
+    width: 90%;
+    padding: 6px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    border: 1.8px solid #a67c52;
+    outline: none;
+    background-color: #fffdf8;
+    font-size: 13px;
+}
+
+input:focus {
+    border-color: #e67e22;
+    box-shadow: 0 0 6px #ffb347;
+}
+
+.btn {
+    margin-top: 8px;
+    padding: 8px 20px;
+    border: none;
+    background-color: #ffa347;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #4a2c0a;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.btn:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
+}
+
+
+footer {
+    margin-top: 15px;
+}
+
+.volver {
+    color: #a0522d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.volver:hover {
+    text-decoration: underline;
+}
+
+
+.container::before,
+.container::after {
+    content: "🍂";
+    position: absolute;
+    font-size: 32px;
+}
+
+.container::before {
+    top: 10px;
+    left: 15px;
+}
+
+.container::after {
+    top: 10px;
+    right: 15px;
+}
+
+.container::part(bottom-left) {
+    content: "🍂";
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+
+.container::part(bottom-right) {
+    content: "🍂";
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}

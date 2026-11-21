@@ -1,0 +1,103 @@
+.header-pan {
+    background: linear-gradient(90deg, #c08457, #3d2406);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 4px solid #8b4513;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.titulo-cafe {
+    font-family: 'Pacifico', cursive;
+    color: #cd9950;
+    font-size: 2.2em;
+    text-shadow: 2px 2px 5px rgba(150, 95, 61, 0.5);
+    margin: 0;
+}
+
+
+.volver {
+    text-decoration: none;
+    background-color: #c4ac88;
+    color: #6b3e26;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid #6b3e26;
+    transition: all 0.3s ease;
+}
+
+.volver:hover {
+    background-color: #7e482a;
+    color: #e7cdcd;
+}
+
+
+body {
+    background: radial-gradient(circle at top left, #f7eadf, #f5d1a5);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.galería-cafe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+    padding: 40px 30px;
+    justify-items: center;
+}
+
+
+.item-cafe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fffaf5;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 6px 12px rgba(66, 171, 31, 2.15);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.item-cafe:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0.6,0,0,0.25);
+}
+
+.cycle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #d2a679;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.item-cafe:hover .cycle {
+    transform: scale(1.1);
+    border-color: #8b4513;
+}
+
+
+.item-cafe p {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #ac784a;
+    background-color: #f9e1c0;
+    padding: 6px 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+@keyframes brilloCafe {
+    0% { text-shadow: 0 0 10px #fff; }
+    50% { text-shadow: 0 0 20px #ffcf91; }
+    100% { text-shadow: 0 0 10px #fff; }
+}
+
+.titulo-cafe:hover {
+    animation: brilloCafe 1.5s infinite alternate;
+}
