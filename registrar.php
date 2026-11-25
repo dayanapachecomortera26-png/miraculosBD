@@ -92,6 +92,13 @@
           <label>Contraseña</label>
           <input type="password" name="contrasena" placeholder="Crea tu contraseña" required>
       </div>
+        <div class="campo">
+          <label>Rol de Usuario</label>
+          <select name="rol" required>
+              <option value="cliente">Cliente</option>
+              <option value="administrador">Administrador</option>
+          </select>
+      </div>
       
       <input type="submit" name="register" class="boton" value="Crear Cuenta">
   </form>
@@ -112,6 +119,7 @@
   if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["register"])) {
       $usuario = trim($_POST["correo"] ?? "");
       $contrasena = trim($_POST["contrasena"] ?? "");
+      $rol = trim($_POST["rol"] ?? "cliente");
 
       if (empty($usuario) || empty($contrasena)) {
           echo "<script>alert('Completa todos los campos'); history.back();</script>";
@@ -119,7 +127,7 @@
       }
 
       // Verificar si el correo ya existe en la tabla cuenta
-      $consulta = $conexion->prepare("SELECT usuario FROM cuenta WHERE usuario = ? LIMIT 1");
+      $consulta = $conexion->prepare("SELECT usuario FROM cliente WHERE usuario = ? LIMIT 1"); 
       $consulta->bind_param("s", $usuario);
       $consulta->execute();
       $consulta->store_result();
@@ -130,11 +138,10 @@
           exit;
       }
       $consulta->close();
-
-      // Insertar en la tabla cliente
-      $insertar = $conexion->prepare("INSERT INTO cliente (usuario, contrasena) VALUES (?, ?)");
-      $insertar->bind_param("ss", $usuario, $contrasena);
-
+      
+      // Insertar en la tabla cliente incluyendo el rol
+      $insertar = $conexion->prepare("INSERT INTO cliente (usuario, contrasena, rol) VALUES (?, ?, ?)");
+      $insertar->bind_param("sss", $usuario, $contrasena, $rol);
       if ($insertar->execute()) {
           echo "<script>alert('✅ Registro exitoso! Ahora inicia sesión'); window.location='login.html';</script>";
       } else {
