@@ -19,6 +19,9 @@ if (empty($correo) || empty($contrasena)) {
     echo "<script>alert('Completa todos los campos'); history.back();</script>";
     exit;
 }
+if (strlen($correo) > 50 || !filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+    echo "<script>alert('Correo inválido o mayor a 50 caracteres'); history.back();</script>"; exit;
+}
 
 $consulta = $conexion->prepare("SELECT contrasena FROM cuenta WHERE correo = ? LIMIT 1");
 $consulta->bind_param("s", $correo);
